@@ -1,0 +1,74 @@
+!! Colorscheme
+
+! special
+*.foreground:   #d0d0d0
+*.background:   #000000
+*.cursorColor:  #d0d0d0
+
+! black
+*.color0:       #000000
+*.color8:       #808080
+
+! red
+*.color1:       #ff0000
+*.color9:       #ff0000
+
+! green
+*.color2:       #33ff00
+*.color10:      #33ff00
+
+! yellow
+*.color3:       #ff0099
+*.color11:      #ff0099
+
+! blue
+*.color4:       #0066ff
+*.color12:      #0066ff
+
+! magenta
+*.color5:       #cc00ff
+*.color13:      #cc00ff
+
+! cyan
+*.color6:       #00ffff
+*.color14:      #00ffff
+
+! white
+*.color7:       #d0d0d0
+*.color15:      #ffffff
+
+!! Display scaling
+Xft.dpi:	120
+
+!! URxvt Appearance
+!URxvt.font: xft:Inconsolata:size=8
+!URxvt.font: xft:Mono:size=22:antialias=true
+URxvt.font: xft:Source Code Pro:pixelsize=22
+!URxvt.font: xft:Inconsolata:pixelsize=14:antialias=true
+!URxvt.boldFont: xft:
+!URxvt.italicFont: xft:DejaVu Sans Mono:pixelsize=15,style=Book
+!URxvt.boldItalicfont: xft:DejaVu Sans Mono:pixelsize=15,style=Book
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+URxvt.geometry: 92x24
+!URxvt.internalBorder: 24
+URxvt.internalBorder: 4
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.saveline: 2048
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.urgentOnBell: true
+URxvt.depth: 24
+URxvt.iso14755: false
+
+URxvt.geometry: 400x400
+
+!! URxvt Functions
+URxvt.perl-ext-common: font-size,selection-to-clipboard,pasta
+URxvt.keysym.Shift-Control-C:    perl:keyboard-select:activate
+URxvt.keysym.Shift-Control-V:    perl:pasta:paste
+! Comment this if you dont want copy when text is selected
+! URxvt.clipboard.autocopy: true
+URxvt.keysym.C-j:       perl:font-size:increase
+URxvt.keysym.C-k:       perl:font-size:decrease
