@@ -19,3 +19,10 @@ vim.cmd.colorscheme 'github_dark_high_contrast'
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+-- formatting
+vim.api.nvim_exec([[
+  function! NeoformatVisual() range
+    '<,'>Neoformat
+  endfunction
+  vnoremap <silent> = :<C-u>call NeoformatVisual()<CR>
+]], false)

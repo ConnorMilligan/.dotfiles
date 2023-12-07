@@ -23,6 +23,12 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
+    -- Cheatcodes
+    use 'github/copilot.vim'
+
+    -- Formatting
+    use 'sbdchd/neoformat'
+
     -- LSP
     use {
         'VonHeikemen/lsp-zero.nvim',
