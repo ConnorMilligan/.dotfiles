@@ -7,17 +7,17 @@ vim.opt.expandtab = true 	-- expand tabs to spaces
 
 -- UI config
 vim.opt.number = true 		-- line numbers
-vim.opt.relativenumber = true 	-- relative line numbers
+vim.opt.relativenumber = false 	-- relative line numbers
+vim.opt.cursorline = true 	-- highlight the current line
+vim.opt.cursorlineopt = 'number' 	-- apply the highlight to the line number only
+
+-- Highlight command to make the line number bold on the current line
+vim.api.nvim_exec([[
+  highlight CursorLineNr cterm=bold
+]], false)
 
 -- mouse
 vim.opt.mouse = ""		-- disable mouse
-
--- colors
-vim.cmd.colorscheme 'github_dark_high_contrast'
-
--- rebinds
-vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- formatting
 vim.api.nvim_exec([[

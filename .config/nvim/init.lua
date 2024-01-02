@@ -1,6 +1,17 @@
-require('options')
-require('plugins')
+-- General options
+require("options")
 
-require('treesitter')
-require('telescope')
-require('lsp')
+-- Keybindings
+require("keybinds")
+
+-- The Lazy package manager
+require("plugins")
+
+-- Telescope Setup
+require("telescope-setup")
+
+-- Treesitter
+require("treesitter-setup")
+
+-- Completion
+require("cmp-setup")

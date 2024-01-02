@@ -1,50 +1,92 @@
-vim.cmd [[packadd packer.nvim]]
+-- Boostrap the lazy module
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-return require('packer').startup(function(use)
-    -- Packer itself
-    use 'wbthomason/packer.nvim'
+-- Plugins
+require("lazy").setup({
+  {
+    "neovim/nvim-lspconfig",
     
-    -- Color Theme
-    use 'projekt0n/github-nvim-theme'
-    
-    -- Treesitter
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
+    dependencies = {
+      -- Auto LSP installation
+      { "williamboman/mason.nvim", config=true },
+      "williamboman/mason-lspconfig.nvim",
+
+      -- Status notifications
+      { "j-hui/fidget.nvim", opts = {} },
+
+      "folke/neodev.nvim",
+    },
+  },
+
+  -- Color Theme
+  {
+    "projekt0n/github-nvim-theme",
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme "github_dark_high_contrast"
+    end,
+  },
+
+  {
+    -- Autocompletion
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      -- Snippet Engine & its associated nvim-cmp source
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
+
+      -- Adds LSP completion capabilities
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-path",
+
+      -- Adds a number of user-friendly snippets
+      "rafamadriz/friendly-snippets",
+    },
+  },
+
+  -- "gc" to comment visual regions/lines
+  { "numToStr/Comment.nvim", opts = {} },
+
+  -- Fuzzy Finder (files, lsp, etc)
+  {
+    "nvim-telescope/telescope.nvim",
+    branch = "0.1.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      -- Fuzzy Finder Algorithm which requires local dependencies to be built.
+      -- Only load if `make` is available. Make sure you have the system
+      -- requirements installed.
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        -- NOTE: If you are having trouble with this installation,
+        --       refer to the README for telescope-fzf-native for more instructions.
+        build = "make",
+        cond = function()
+          return vim.fn.executable "make" == 1
         end,
-    }
+      },
+    },
+  },
 
-    -- Telescope
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.4',
-        -- or                            , branch = '0.1.x',
-        requires = { {'nvim-lua/plenary.nvim'} }
-    }
+  -- Treesitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+    },
+    build = ":TSUpdate",
+  },
 
-    -- Cheatcodes
-    use 'github/copilot.vim'
 
-    -- Formatting
-    use 'sbdchd/neoformat'
-
-    -- LSP
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
-        requires = {
-            --- Uncomment these if you want to manage LSP servers from neovim
-            {'williamboman/mason.nvim'},
-            {'williamboman/mason-lspconfig.nvim'},
-
-            -- LSP Support
-            {'neovim/nvim-lspconfig'},
-            -- Autocompletion
-            {'hrsh7th/nvim-cmp'},
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'L3MON4D3/LuaSnip'},
-        }
-    }
-
-end)
+})
