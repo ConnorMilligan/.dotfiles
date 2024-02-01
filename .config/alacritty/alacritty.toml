@@ -12,8 +12,8 @@ import = [
 # Shell program and its arguments
 # Default for Linux/BSD/macOS is $SHELL or user's login shell
 # Default for Windows is "powershell"
-#[shell]
-#program = "/bin/zsh"  # Example for Linux/BSD/macOS
+[shell]
+program = "/bin/zsh"  # Example for Linux/BSD/macOS
 #args = ["-l"]
 
 # Working directory

@@ -6,11 +6,15 @@
 }
 
 window#waybar {
+    background-color: rgba(32, 32, 32, 0.8);
+}
+
+window#waybar.empty #window {
     background-color: transparent;
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 0 3px;
     background-color: transparent;
     border-radius: 0px;
     color: #ffffff;
