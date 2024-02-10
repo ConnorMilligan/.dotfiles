@@ -15,3 +15,6 @@ require("treesitter-setup")
 
 -- Completion
 require("cmp-setup")
+
+-- LSP
+require("lsp-setup")
