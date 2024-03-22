@@ -109,5 +109,8 @@ require("lazy").setup({
 
   -- Formatter
   { "sbdchd/neoformat" },
-
+  
+  -- Zig
+  { "ziglang/zig.vim" },
+   
 })

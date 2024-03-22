@@ -100,7 +100,7 @@ multiplier = 1  # Default: 3
 [font]
 
 # Normal font style
-normal = { family = "SauceCodePro Nerd Font Mono", style = "Regular" }  # Default for Linux/BSD: "monospace", Regular
+normal = { family = "Fira Code", style = "Regular" }  # Default for Linux/BSD: "monospace", Regular
 
 # Bold font style
 bold = { style = "Bold" }  # Inherits family from normal, Default style: Bold
