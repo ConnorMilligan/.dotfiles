@@ -38,6 +38,15 @@ require("lazy").setup({
     end,
   },
 
+  --{
+    --"RRethy/base16-nvim",
+    --priority = 1000,
+    --config = function()
+        --vim.cmd.set("termguicolors")
+        --vim.cmd.colorscheme("base16-isotope")
+    --end,
+  --},
+
   {
     -- Autocompletion
     "hrsh7th/nvim-cmp",

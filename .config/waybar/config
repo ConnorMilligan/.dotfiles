@@ -21,8 +21,8 @@
   "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
 },
 "hyprland/workspaces": {
-     "sort-by-name": true,
-     "on-click": "activate"
+    "sort-by-name": true,
+    "on-click": "activate",
 },
 "hyprland/window": {
     "max-length": 200,
