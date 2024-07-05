@@ -66,6 +66,7 @@ local servers = {
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
   zls = {},
+  cmake = {},
 
   lua_ls = {
     Lua = {

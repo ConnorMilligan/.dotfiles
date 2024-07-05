@@ -18,3 +18,6 @@ require("cmp-setup")
 
 -- LSP
 require("lsp-setup")
+
+-- CMake Configuration
+require("cmake-config")

@@ -118,6 +118,11 @@ require("lazy").setup({
 
   -- Formatter
   { "sbdchd/neoformat" },
+
+  -- Cmake
+  { 
+    "Civitasv/cmake-tools.nvim",
+  },
   
   -- Zig
   { "ziglang/zig.vim" },
