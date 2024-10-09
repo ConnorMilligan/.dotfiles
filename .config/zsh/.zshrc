@@ -4,9 +4,6 @@
 # Put zcompdump in the cache directory
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
 path+="/home/connor/.cargo/bin"
 path+="/home/connor/.local/bin"
 
@@ -127,6 +124,9 @@ export _JAVA_OPTIONS="-Djava.util.prefs.userRoot=${XDG_CONFIG_HOME}/java -Djavaf
 
 # Python
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
+
+# Go
+export GOPATH="$XDG_DATA_HOME/go"
 
 # Npm
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
