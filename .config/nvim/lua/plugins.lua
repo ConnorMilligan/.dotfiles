@@ -113,9 +113,6 @@ require("lazy").setup({
     build = ":TSUpdate",
   },
  
-  -- Cheatcode
-  { "github/copilot.vim" },
-
   -- Formatter
   { "sbdchd/neoformat" },
 

@@ -102,8 +102,6 @@ source $HOME/.oh-my-zsh/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias zig-nightly-update="sh ~/.local/bin/zig-nightly-update.sh"
-eval "$(gh copilot alias -- zsh)"
 
 # Ruby stuff
 export GEM_HOME="$HOME/.local/share/gem"
