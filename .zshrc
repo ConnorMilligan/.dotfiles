@@ -128,6 +128,8 @@ export GOPATH="$XDG_DATA_HOME/go"
 
 # Npm
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export NPM_CONFIG_PREFIX=$HOME/.local/
+path+="$NPM_CONFIG_PREFIX/bin"
 
 # Bundler
 export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME/bundle"
