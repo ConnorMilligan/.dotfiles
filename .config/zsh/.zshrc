@@ -68,6 +68,11 @@ ZSH_THEME="fishy"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# ZSH autocompletions
+autoload -U compinit promptinit
+compinit
+promptinit; prompt gentoo
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -75,7 +80,6 @@ ZSH_THEME="fishy"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
-source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 # User configuration
 
@@ -103,15 +107,20 @@ source $HOME/.oh-my-zsh/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Ruby stuff
-export GEM_HOME="$HOME/.local/share/gem"
-path+=("$GEM_HOME/bin")
-
 # xdg stuff
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
+
+# Zsh
+export HISTFILE="$XDG_STATE_HOME"/zsh/history
+export ZSH="$XDG_DATA_HOME"/oh-my-zsh
+source $XDG_DATA_HOME/oh-my-zsh/oh-my-zsh.sh
+
+# Ruby stuff
+export GEM_HOME="$HOME/.local/share/gem"
+path+=("$GEM_HOME/bin")
 
 # Rust
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
@@ -152,3 +161,6 @@ export WINEPREFIX="$XDG_DATA_HOME/wine"
 export XMODIFIERS="@im=fcitx"
 export QT_IM_MODULE=fcitx
 export GTK_IM_MODULE=fcitx
+
+# ollama
+OLLAMA_ORIGINS=*
