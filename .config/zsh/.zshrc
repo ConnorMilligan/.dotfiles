@@ -118,6 +118,16 @@ export HISTFILE="$XDG_STATE_HOME"/zsh/history
 export ZSH="$XDG_DATA_HOME"/oh-my-zsh
 source $XDG_DATA_HOME/oh-my-zsh/oh-my-zsh.sh
 
+# Android
+export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
+alias adb='HOME="$XDG_DATA_HOME"/android adb'
+
+# Crawl
+export CRAWL_DIR="$XDG_DATA_HOME"/crawl/
+
+# Dotnet
+export DOTNET_CLI_HOME="$XDG_DATA_HOME"/dotnet
+
 # Ruby stuff
 export GEM_HOME="$HOME/.local/share/gem"
 path+=("$GEM_HOME/bin")
@@ -130,15 +140,16 @@ export _JAVA_OPTIONS="-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java"
 export _JAVA_OPTIONS="-Djava.util.prefs.userRoot=${XDG_CONFIG_HOME}/java -Djavafx.cachedir=${XDG_CACHE_HOME}/openjfx"
 
 # Python
-export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
+export PYTHON_HISTORY="$XDG_STATE_HOME/python_history"
 
 # Go
 export GOPATH="$XDG_DATA_HOME/go"
 
-# Npm
+# Node
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export NPM_CONFIG_PREFIX=$HOME/.local/
 path+="$NPM_CONFIG_PREFIX/bin"
+export NODE_REPL_HISTORY="$XDG_STATE_HOME"/node_repl_history
 
 # Bundler
 export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME/bundle"
