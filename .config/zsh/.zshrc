@@ -163,7 +163,7 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export TLDR_CACHE_DIR="$XDG_CACHE_HOME/tldr"
 
 # Wget
-alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
 
 # Wine
 export WINEPREFIX="$XDG_DATA_HOME/wine"
