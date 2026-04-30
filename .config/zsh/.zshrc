@@ -7,6 +7,10 @@ export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 path+="/home/connor/.cargo/bin"
 path+="/home/connor/.local/bin"
 
+autoload -U compinit promptinit
+compinit
+promptinit; prompt gentoo
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -168,10 +172,6 @@ alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
 # Wine
 export WINEPREFIX="$XDG_DATA_HOME/wine"
 
-# fcitx stuff
-export XMODIFIERS="@im=fcitx"
-export QT_IM_MODULE=fcitx
-export GTK_IM_MODULE=fcitx
-
 # ollama
 OLLAMA_ORIGINS=*
+
