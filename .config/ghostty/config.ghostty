@@ -1,0 +1,8 @@
+theme = Firefly Traditional
+
+font-family = Monocraft
+font-size = 11
+font-feature = -calt, -liga, -dlig
+
+window-inherit-working-directory = false
+confirm-close-surface = false

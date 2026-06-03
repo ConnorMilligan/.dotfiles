@@ -29,24 +29,6 @@ require("lazy").setup({
     },
   },
 
-  -- Color Theme
-  {
-    "projekt0n/github-nvim-theme",
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme "github_dark_high_contrast"
-    end,
-  },
-
-  --{
-    --"RRethy/base16-nvim",
-    --priority = 1000,
-    --config = function()
-        --vim.cmd.set("termguicolors")
-        --vim.cmd.colorscheme("base16-isotope")
-    --end,
-  --},
-
   {
     -- Autocompletion
     "hrsh7th/nvim-cmp",
@@ -107,12 +89,25 @@ require("lazy").setup({
   -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
+    tag = "v0.10.0",
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
     },
     build = ":TSUpdate",
+    config = function()
+      require("treesitter-setup")
+    end,
+  }, 
+
+  -- Colorscheme
+  {
+    "projekt0n/github-nvim-theme",
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme "github_dark_high_contrast"
+    end,
   },
- 
+
   -- Formatter
   { "sbdchd/neoformat" },
 
